@@ -697,3 +697,53 @@ body {
 }
 
 /* Footer End */
+
+/* Marquee Container */
+
+.marquee-container {
+  position: relative;
+
+  width: 100%;
+  overflow: hidden; /* Hides overflowing content */
+  background: linear-gradient(
+    to right,
+    #ffa17f,
+    #00223e
+  ); /* Gradient background */
+  color: white;
+  font-family: "Quicksand", sans-serif;
+  padding: 10px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrolling Content */
+.marquee-content {
+  display: flex;
+  gap: 50px; /* Spacing between items */
+
+  animation: scroll-marquee 15s linear infinite; /* Infinite scrolling */
+}
+
+.marquee-content p {
+  flex: none; /* Prevent text wrapping */
+  white-space: nowrap; /* Ensure text stays on a single line */
+  font-size: 0.9rem;
+
+  margin: 0px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Hover Pause */
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused; /* Pause animation on hover */
+}
+
+/* Keyframes for Scrolling */
+@keyframes scroll-marquee {
+  from {
+    transform: translateX(100%); /* Start from the right */
+  }
+  to {
+    transform: translateX(-100%); /* Move to the left */
+  }
+}
